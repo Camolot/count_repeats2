@@ -32,7 +32,11 @@
       ";
     });
 
-    $output = ""
+    $app->get("/view_count", function() use($app) {
+      $myCount = new Count;
+      $count_phrase = $my_Count->makeCount($_GET['phrase']);
+      return $app[twig]->render('count.twig', array('result' => $count_number));
+    })
 
     return $app;
 ?>
