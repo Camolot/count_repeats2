@@ -4,7 +4,7 @@
 
     $app = new Silex\Application();
 
-    $app->get("/", function() {
+    $app->get("/new_count", function() {
       return "
       <!DOCTYPE html>
       <html>
@@ -32,10 +32,9 @@
       ";
     });
 
-    $app->get("/view_count", function() use($app) {
+    $app->get("/create_count", function() use($app) {
       $myCount = new Count;
-      $count_phrase = $my_Count->makeCount($_GET['phrase']);
-      return $app[twig]->render('count.twig', array('result' => $count_number));
+      $count_result
     })
 
     return $app;
